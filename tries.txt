@@ -1,0 +1,215 @@
+
+
+t1:
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu")(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=256, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dense(units=256, activation="relu")(x)
+    x = keras.layers.Dropout(0.4)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
+	
+	
+t2:
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu")(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=256, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dense(units=256, activation="relu")(x)
+    x = keras.layers.Dropout(0.4)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
+	
+t_не_сохранил: пососная ужс
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="tanh")(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="tanh")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="tanh")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=256, kernel_size=3, activation="tanh")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=512, activation="tanh")(x)
+    x = keras.layers.Dense(units=256, activation="tanh")(x)
+    x = keras.layers.Dropout(0.4)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
+	
+t4:
+	Accuracy: 0.7166666666666667
+	Precision: 0.7241379310344828
+	Recall: 0.7
+
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=4, activation="relu")(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=256, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dropout(0.35)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
+	
+t5: не лучше
+
+t6:
+	Accuracy: 0.7833333333333333
+	Precision: 0.8148148148148148
+	Recall: 0.7333333333333333
+
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu", dilation_rate=(3,3,3))(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu", dilation_rate=(2,2,2))(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="relu", dilation_rate=(2,2,2))(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=256, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dense(units=512, activation="relu")(x)
+    x = keras.layers.Dropout(0.2)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
+	
+	
+t7:
+Accuracy: 0.7833333333333333
+Precision: 0.7575757575757576
+Recall: 0.8333333333333334
+
+def get_model(width=128, height=128, depth=64):
+    """Build a 3D convolutional neural network model."""
+
+    inputs = keras.Input((width, height, depth, 1))
+    
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu", dilation_rate=(3,3,3))(inputs)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=64, kernel_size=3, activation="relu", dilation_rate=(2,2,2))(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=128, kernel_size=3, activation="relu", dilation_rate=(1,1,1))(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.Conv3D(filters=512, kernel_size=3, activation="relu")(x)
+    x = keras.layers.MaxPool3D(pool_size=2)(x)
+    x = keras.layers.BatchNormalization()(x)
+
+    x = keras.layers.GlobalAveragePooling3D()(x)
+    x = keras.layers.Dense(units=768, activation="relu")(x)
+    x = keras.layers.Dense(units=768, activation="relu")(x)
+    x = keras.layers.Dropout(0.2)(x)
+
+    outputs = keras.layers.Dense(units=1, activation="sigmoid")(x)
+
+    # Define the model.
+    model = keras.Model(inputs, outputs, name="3dcnn")
+    return model
